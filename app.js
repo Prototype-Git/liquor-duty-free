@@ -10,8 +10,8 @@ const SELF_DECLARE_CAP = 200000;
 const state = {
   mode: 'out',            // out: 한국→해외, in: 해외→한국
   dest: 'JP',
-  travelers: [{ name: '나', age: 30 }, { name: '동행 1', age: 30 }],
-  items: [{ name: '', type: 'whisky', ml: 700, abv: 40, price: 80, currency: 'USD', qty: 2, c: 1 }],
+  travelers: [{ name: '나', age: 30 }],
+  items: [],
 };
 let rates = { values: FALLBACK_RATES, source: 'fallback', updatedAt: null };
 
@@ -319,7 +319,7 @@ function renderInputs() {
       </div>
       <div class="grid">
         <label>종류<select data-i="${i}" data-f="type">${typeOpts}</select></label>
-        <label>용량(ml)<input type="number" inputmode="numeric" min="0" list="ml-presets" data-i="${i}" data-f="ml" value="${esc(it.ml)}"></label>
+        <label>용량(ml)<input type="number" inputmode="numeric" min="0" step="50" list="ml-presets" data-i="${i}" data-f="ml" value="${esc(it.ml)}"></label>
         <label>도수(%)<input type="number" inputmode="decimal" step="0.1" data-i="${i}" data-f="abv" value="${esc(it.abv)}"></label>
         <label>수량(병)<input type="number" inputmode="numeric" min="0" step="1" data-i="${i}" data-f="qty" value="${esc(it.qty)}"></label>
         <label class="span2">1병 가격<span class="price"><input type="number" inputmode="decimal" min="0" step="any" data-i="${i}" data-f="price" value="${esc(it.price)}"><select data-i="${i}" data-f="currency">${curOpts}</select></span></label>
