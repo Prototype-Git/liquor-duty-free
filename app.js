@@ -319,7 +319,7 @@ function renderInputs() {
       </div>
       <div class="grid">
         <label>종류<select data-i="${i}" data-f="type">${typeOpts}</select></label>
-        <label>용량(ml)<input type="number" inputmode="numeric" min="0" step="50" list="ml-presets" data-i="${i}" data-f="ml" value="${esc(it.ml)}"></label>
+        <label>용량(ml)<input type="number" inputmode="numeric" min="0" step="50" data-i="${i}" data-f="ml" value="${esc(it.ml)}"></label>
         <label>도수(%)<input type="number" inputmode="decimal" step="0.1" data-i="${i}" data-f="abv" value="${esc(it.abv)}"></label>
         <label>수량(병)<input type="number" inputmode="numeric" min="0" step="1" data-i="${i}" data-f="qty" value="${esc(it.qty)}"></label>
         <label class="span2">1병 가격<span class="price"><input type="number" inputmode="decimal" min="0" step="any" data-i="${i}" data-f="price" value="${esc(it.price)}"><select data-i="${i}" data-f="currency">${curOpts}</select></span></label>
